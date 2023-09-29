@@ -1,0 +1,45 @@
+---
+import "./background.css";
+---
+
+<div class="max-w-xl mx-auto">
+  <div class="fixed -z-10">
+    <div class="-z-10 bg-grid-container">
+      <div class="item-a">
+        <div class="h-48 w-48 bg-primary rounded-full relative -z-10 -top-16">
+        </div>
+        <div
+          class="h-40 w-40 bg-transparent border-primary border rounded-full relative -z-10 -top-40 -left-24"
+        >
+        </div>
+      </div>
+
+      <div class="item-b">
+        <div
+          class="h-24 w-24 rounded-full relative -z-10 bg-pattern -top-48 -left-24"
+        >
+        </div>
+        <div
+          class="h-32 w-32 rounded-full relative -z-10 bg-pattern -top-48 -left-20"
+        >
+        </div>
+      </div>
+
+      <div class="item-c">
+        <div
+          class="h-40 w-40 bg-primary rounded-full relative -z-10 -bottom-40 -left-20"
+        >
+        </div>
+
+        <div
+          class="h-40 w-40 bg-transparent border-primary border rounded-full relative -z-10 -bottom-8"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-6">
+    <slot />
+  </div>
+</div>
