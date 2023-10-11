@@ -3,8 +3,9 @@ import Layout from "../../layouts/haikus-layout.astro";
 import Koi from "../../home/icons/koi.astro";
 ---
 
-<layout>
-    <div class="flex justify-center items-center h-screen">
+<Layout>
+    <div class="fixed -z-10 h-screen flex justify-center items-center w-screen">
         <Koi />
     </div>
-</layout>
+    <div class="h-screen flex justify-center items-center w-screen">texto</div>
+</Layout>

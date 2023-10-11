@@ -1,10 +1,20 @@
 ---
 import Layout from "../../layouts/haikus-layout.astro";
-import Laguna from "../../home/icons/Laguna.astro";
+import Laguna from "../../home/icons/laguna.astro";
+import Blas from "../../home/icons/linea.astro";
 ---
 
 <Layout>
-    <div class="flex justify-center items-center h-screen">
-        <Laguna />
+    <div class="fondo">
+        <div class="flex streth flex-col justify-center items-center h-screen">
+            <Laguna />
+        </div>
+    </div>
+    <div class="line">
+        <div class="flex align-items= streth flex-col">
+            <div class="py-12">02</div>
+
+            <Blas />
+        </div>
     </div>
 </Layout>

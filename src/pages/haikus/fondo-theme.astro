@@ -2,16 +2,17 @@
 import Layouts from "../../layouts/haikus-layout.astro";
 import Flor from "../../home/icons/florModifi.astro";
 import Hoja from "../../home/icons/hoja.astro";
+import Circle from "../../home/icons/circle.astro";
 ---
 
 <Layouts>
-    <div class="h-screen">
-        <Flor />
+    <Flor />
 
-        <p class="text-center">Palabras que</p>
-        <p class="text-center">burbujean como</p>
-        <p class="text-center">un refresco</p>
-    </div>
+ 
+<div class="fixed -z-10 h-screen flex justify-center items-center w-screen">
+       <Circle />
+   </div>
+   <div class="h-screen flex justify-center items-center w-screen">texto</div>
 
     <div class="flex justify-end">
         <Hoja />
