@@ -1,18 +1,20 @@
 ---
 import Layout from "../../layouts/haikus-layout.astro";
 import Laguna from "../../home/icons/laguna.astro";
-import Blas from "../../home/icons/columna.astro";
+import Abajo from "../../home/icons/columna.astro";
+import Arriba from "../../home/icons/columna.2.astro";
 ---
 
 <Layout>
-    <div class="fondo">
-        <div class="flex streth flex-col justify-center items-center h-screen">
-            <Laguna />
-        </div>
+    <div class="padding-left: 40%; font-family: Gill Sans, sans-serif;">
+        <Arriba />
     </div>
-    <div class="line">
-        <div class="flex flex-col">
-            <Blas />
-        </div>
+    <div class="flex streth flex-col justify-center items-center h-screen">
+        <Laguna />
+    </div>
+
+    <div class="flex flex-col"></div>
+    <div class="flex-start;">
+        <Abajo />
     </div>
 </Layout>

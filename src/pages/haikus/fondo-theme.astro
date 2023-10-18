@@ -3,18 +3,20 @@ import Layouts from "../../layouts/haikus-layout.astro";
 import Flor from "../../home/icons/florModifi.astro";
 import Hoja from "../../home/icons/hoja.astro";
 import Circle from "../../home/icons/circle.astro";
+import Flor2 from "../../home/icons/florModifi2.astro";
 ---
 
 <Layouts>
-    <Flor />
+    <div class="relative">
+        <Flor />
+    </div>
 
- 
-<div class="fixed -z-10 h-screen flex justify-center items-center w-screen">
-       <Circle />
-   </div>
-   <div class="h-screen flex justify-center items-center w-screen">texto</div>
+        <p class="text-center">Palabras que</p>
+        <p class="text-center">burbujean como</p>
+        <p class="text-center">un refresco</p>
 
-    <div class="flex justify-end">
+
+    <div class="absolute right-[3rem] bottom-[-65rem]">
         <Hoja />
     </div>
 </Layouts>
