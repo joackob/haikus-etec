@@ -1,0 +1,22 @@
+---
+import HaikusLayout from "../../layouts/haikus-layout.astro";
+import Luna from "./icons/Luna.astro";
+import Montana from "./icons/montana.astro";
+---
+
+<HaikusLayout>
+    <div class="flex items-center h-screen">
+        <div class="mx-auto">
+            <div class="">
+                <Luna />
+            </div>
+            <slot/>
+                <div class="h-20" style="color: #1e3050;">
+                    <div class="flex justify-center items-center mr-1">
+                        <Montana />
+                        <Montana />
+                    </div>
+                </div>
+        </div>
+    </div>
+</HaikusLayout>
