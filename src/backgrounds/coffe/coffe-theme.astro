@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/haikus-layout.astro";
+import Arriba from "./icons/columna2.astro";
+import Abajo from "./icons/columna.astro";
+import Circulo from "./icons/puntoRojo.astro";
+import Taza from './icons/taza.astro'//falta modificar mucho mas
+---
+
+<Layout>
+    <div class="padding-left: 10%; font-family: Gill Sans, sans-serif;">
+        <Arriba />
+        
+        <div class="flex streth flex-col justify-center items-center">
+        <Taza/>
+
+    </div>
+    <div class="flex streth flex-col justify-center items-center">
+        <Circulo />
+        <slot/>
+    </div>
+
+    <div class="flex flex-col"></div>
+    <div class="flex-start;">
+        <Abajo />
+    </div>
+</Layout>
