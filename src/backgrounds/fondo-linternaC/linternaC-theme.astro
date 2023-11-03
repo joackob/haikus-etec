@@ -1,13 +1,12 @@
 ---
 import Layout from "../../layouts/haikus-layout.astro";
-import Lin from "../../home/icons/linterna.astro";
+import Linc from "./icons/linternaC.astro";
 ---
-
 <Layout>
     <div class="fixed -z-10 h-screen flex justify-center items-center w-screen">
-        <Lin />
+        <Linc />
     </div>
     <div class="h-screen flex justify-center items-center w-screen">
-        texto del haiku
+        <slot />
     </div>
 </Layout>
