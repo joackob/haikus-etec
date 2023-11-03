@@ -1,0 +1,13 @@
+---
+import Layout from "../../layouts/haikus-layout.astro";
+import Templo from "./icons/templo.astro";
+---
+
+<Layout>
+  <div class="h-screen flex justify-center items-center w-screen">
+    <slot />
+  </div>
+  <div class="flex justify-end">
+    <Templo />
+  </div>
+</Layout>
