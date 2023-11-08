@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/haikus-layout.astro";
+import Cuadrado from "./icons/cuadrado.astro";
+import Origami from "./icons/origami.astro";
+import Origami2 from "./icons/origami2.astro";
+---
+
+<Layout>
+  <div class="fixed -z-10 h-screen flex justify-center items-center w-screen">
+    <Cuadrado />
+  </div>
+
+  <div class="flex justify-between">
+    <div class="absolute bottom-83 right-30">
+      <Origami />
+    </div>
+  </div>
+
+  <div class="flex justify-between">
+    <div class="absolute bottom-62 right-30">
+      <Origami2 />
+    </div>
+  </div>
+
+  <slot />
+</Layout>
