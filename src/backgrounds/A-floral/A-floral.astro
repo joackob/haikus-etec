@@ -1,13 +1,17 @@
 ---
 import Layouts from "../../layouts/haikus-layout.astro";
 import Floral from "./icons/floral.astro";
+import Neko from "./icons/neko.astro";
 ---
 
 <Layouts>
-    <div class="absolute bottom-0">
-        <Floral />
-    </div>
+    <Floral />
+
     <div class="h-screen flex justify-center items-center w-screen">
         <slot />
+    </div>
+
+    <div class="absolute bottom-0 right-0">
+        <Neko />
     </div>
 </Layouts>
