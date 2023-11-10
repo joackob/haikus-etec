@@ -11,4 +11,14 @@ const posts = defineCollection({
   }),
 });
 
-export const collections = { posts };
+const haikus = defineCollection({
+  schema: z.object({
+    autoria: z.string(),
+    pubDate: z
+      .string()
+      .or(z.date())
+      .transform((val) => new Date(val)),
+  }),
+});
+
+export const collections = { posts, haikus };
