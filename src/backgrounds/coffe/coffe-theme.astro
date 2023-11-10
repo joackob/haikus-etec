@@ -1,19 +1,24 @@
 ---
 import Layout from "../../layouts/haikus-layout.astro";
 import Columnas from "./icons/columna.astro";
-import Circulo from "./icons/puntoRojo.astro";
-import Taza from "./icons/taza.astro"; //falta modificar mucho mas
+import Circulo from "./icons/SolNaranja.astro";
+import Taza from "./icons/taza.astro";
 ---
 
 <Layout>
     <div class="h-screen flex flex-col items-center justify-between">
-        <div class="w-52"><Columnas /></div>
-
+        <div class="w-52">
+            <Columnas />
+        </div>
 
         <div
-            class=" fixed -z-10 h-screen w-screen flex flex-col justify-center items-center"
-        >
+            class=" fixed -z-10 h-screen w-screen flex flex-col justify-center items-center">
             <Circulo />
+        </div>
+
+        <div
+            class=" fixed -z-10 h-screen w-screen flex flex-col justify-center items-center">
+            <Taza />
         </div>
 
         <div class="">
