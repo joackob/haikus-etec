@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+const haikus = await getCollection("haikus");
+const haiku = haikus[Math.floor(Math.random() * haikus.length)];
+const { Content } = await haiku.render();
+---
+
+<div
+  class="max-w-xl mx-auto h-screen flex items-center justify-center text-light absolute z-10"
+>
+  <Content />
+</div>
