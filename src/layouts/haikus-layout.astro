@@ -1,9 +1,7 @@
 ---
 import Head from "./components/head.astro";
-import Header from "./components/header.astro";
-import Background from "./components/background.astro";
-
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config/consts";
+import service from "../service";
 
 export interface Props {
   title?: string;
@@ -12,9 +10,11 @@ export interface Props {
 
 const { title = SITE_TITLE, description = SITE_DESCRIPTION }: Props =
   Astro.props;
+
+const haiku = service.getARandomHaiku();
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <Head title={title} description={description} />
   <body class="bg-light">
