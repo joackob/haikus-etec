@@ -1,17 +1,19 @@
 ---
 import Head from "./components/head.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config/consts";
-import service from "../service";
+import type { Haiku } from "../models";
 
 export interface Props {
   title?: string;
   description?: string;
+  haiku?: Haiku;
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION }: Props =
-  Astro.props;
-
-const haiku = service.getARandomHaiku();
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  haiku,
+}: Props = Astro.props;
 ---
 
 <!doctype html>

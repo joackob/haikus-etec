@@ -1,7 +1,6 @@
 ---
 import Layouts from "../../layouts/haikus-layout.astro";
 import service from "../../service";
-
 const haiku = service.getARandomHaiku();
 ---
 
@@ -14,7 +13,7 @@ const haiku = service.getARandomHaiku();
   }
 </style>
 
-<Layouts>
+<Layouts haiku={haiku}>
   <div
     class="bg-dark h-screen rounded-lg flex items-center justify-center flex-col"
   >
