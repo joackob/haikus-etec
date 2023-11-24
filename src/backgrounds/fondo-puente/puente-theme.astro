@@ -4,10 +4,11 @@ import Puente from "./icons/puente.astro";
 ---
 
 <Layout>
-    <div class="h-screen flex justify-center items-center w-screen">
-        <slot />
-    </div>
-    <div class="flex justify-end">
-        <Puente />
+    <div class="h-screen flex items-center justify-end flex-col">
+        <div class="mb-[20vh]">
+        
+          <slot />
+        </div>
+            <Puente />
     </div>
 </Layout>
