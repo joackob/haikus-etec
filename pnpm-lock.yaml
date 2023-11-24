@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+npmlockfileVersion: '6.0'
 
 dependencies:
   '@astrojs/mdx':
