@@ -23,6 +23,9 @@ module.exports = {
         pink: "#F34868ff",
       },
     },
+    screens: {
+      xs: "200px"
+    }
   },
   plugins: [],
 };
