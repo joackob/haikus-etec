@@ -4,8 +4,7 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@haiku/*": ["src/haiku/*"],
-      "@home/*": ["src/home/*"],
+      "@content/*": ["src/content/*"],
       "@layouts/*": ["src/layouts/*"],
       "@backgrounds/*": ["src/backgrounds/*"]
     }
