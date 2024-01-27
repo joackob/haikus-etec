@@ -1,31 +1,29 @@
 /** @type {import('tailwindcss').Config} */
-// red for icons: #e85e56
-// white for background and fonts light: #f4e9dc
-// black for background and fonts dark: #494949
-// new pallette colors for haikus
+// the pallette colors is based in this theme:
+// https://ar.pinterest.com/pin/764908317985213312/
+// https://coolors.co/fd9678-d97c65-f54768-974063-41436a-3e3638
 //
-// --salmon: #F28E75ff;
-// --english-violet: #474167ff;
-// --gunmetal: #2A323Fff;
-// --bright-pink-crayola: #F34868ff;
+// /* CSS HEX */
+// --atomic-tangerine: #fd9678ff;
+// --burnt-sienna: #d97c65ff;
+// --bright-pink-crayola: #f54768ff;
+// --quinacridone-magenta: #974063ff;
+// --delft-blue: #41436aff;
+// --jet: #3e3638ff;
 //
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
       colors: {
-        primary: "#e85e56",
-        light: "#f4e9dc",
-        dark: "#494949",
-        salmon: "#F28E75ff",
-        violet: "#474167ff",
-        gunmetal: "#2A323Fff",
-        pink: "#F34868ff",
+        atomic_tangerine: "#fd9678ff",
+        burnt_sienna: "#d97c65ff",
+        bright_pink_crayola: "#f54768ff",
+        quinacridone_magenta: "#974063ff",
+        delft_blue: "#41436aff",
+        jet: "#3e3638ff",
       },
     },
-    screens: {
-      xs: "200px"
-    }
   },
   plugins: [],
 };
