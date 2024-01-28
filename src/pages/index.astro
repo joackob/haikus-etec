@@ -2,6 +2,8 @@
 import BgAtomic from "@backgrounds/mock-bg-atomic-tangerine/index.astro";
 import BgDelft from "@backgrounds/mock-bg-delft-blue/index.astro";
 import "../styles/global.css";
+
+const bgs = [BgAtomic, BgDelft];
 ---
 
 <!doctype html>
@@ -13,13 +15,13 @@ import "../styles/global.css";
     <div
       class="bg-burnt_sienna h-screen snap-mandatory snap-y overflow-y-scroll"
     >
-      <div class="snap-start h-full snap-always">
-        <BgDelft />
-      </div>
-
-      <div class="snap-start h-full snap-always">
-        <BgAtomic />
-      </div>
+      {
+        bgs.map((Bg) => (
+          <div class="snap-start h-full snap-always">
+            <Bg />
+          </div>
+        ))
+      }
     </div>
   </body>
 </html>
