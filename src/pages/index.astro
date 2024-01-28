@@ -3,7 +3,6 @@ import "../styles/global.css";
 
 import HtmlLayout from "@layouts/basic-layout.astro";
 import HaikusLayout from "@layouts/haikus-layout.astro";
-import HaikuSection from "@haiku/haiku-section.astro";
 import BgAtomic from "@backgrounds/mock-bg-atomic-tangerine/index.astro";
 import BgDelft from "@backgrounds/mock-bg-delft-blue/index.astro";
 import { getCollection } from "astro:content";
@@ -17,11 +16,7 @@ const haikus = await getCollection("haikus");
     {
       haikus.map((haiku, index) => {
         const Background = backgrounds[index % backgrounds.length];
-        return (
-          <HaikuSection>
-            <Background>{haiku.body}</Background>
-          </HaikuSection>
-        );
+        return <Background>{haiku.body}</Background>;
       })
     }
   </HaikusLayout>
