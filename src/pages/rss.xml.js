@@ -4,7 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../config/consts";
 
 export async function GET(context) {
   const haikus = await getCollection("haikus");
-  return rss({
+  const rssResponse = rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
@@ -14,4 +14,5 @@ export async function GET(context) {
       link: `${SITE_URL}/haikus/${haiku.slug}/`,
     })),
   });
+  return new Response(JSON.stringify(rssResponse));
 }
