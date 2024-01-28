@@ -6,6 +6,6 @@ escuela: "Escuela Técnica de la Universidad de Buenos Aires"
 curso: "1D"
 ---
 
-La noche oscura.
-El cielo es muy brillante.
+La noche oscura. <br/>
+El cielo es muy brillante. <br/>
 Amanecer.

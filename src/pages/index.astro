@@ -9,14 +9,21 @@ import { getCollection } from "astro:content";
 
 const backgrounds = [BgAtomic, BgDelft];
 const haikus = await getCollection("haikus");
+const haikusRenders = await Promise.all(
+  haikus.map(async (haiku) => await haiku.render()),
+);
 ---
 
 <HtmlLayout>
   <HaikusLayout>
     {
-      haikus.map((haiku, index) => {
+      haikusRenders.map(({ Content }, index) => {
         const Background = backgrounds[index % backgrounds.length];
-        return <Background>{haiku.body}</Background>;
+        return (
+          <Background>
+            <Content />
+          </Background>
+        );
       })
     }
   </HaikusLayout>
