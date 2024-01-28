@@ -5,8 +5,8 @@
     "baseUrl": ".",
     "paths": {
       "@content/*": ["src/content/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@backgrounds/*": ["src/backgrounds/*"]
+      "@backgrounds/*": ["src/backgrounds/*"],
+      "@haiku": ["src/haiku/*"]
     }
   }
 }
