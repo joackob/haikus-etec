@@ -4,6 +4,9 @@ import BgDelft from "@backgrounds/mock-bg-delft-blue/index.astro";
 import "../styles/global.css";
 
 const bgs = [BgAtomic, BgDelft];
+
+import { getCollection } from "astro:content";
+const haikus = await getCollection("haikus");
 ---
 
 <!doctype html>
@@ -16,11 +19,14 @@ const bgs = [BgAtomic, BgDelft];
       class="bg-burnt_sienna h-screen snap-mandatory snap-y overflow-y-scroll"
     >
       {
-        bgs.map((Bg) => (
-          <div class="snap-start h-full snap-always">
-            <Bg />
-          </div>
-        ))
+        haikus.map((haiku, index) => {
+          const BgFrame = bgs[index % bgs.length];
+          return (
+            <div class="snap-start h-full snap-always">
+              <BgFrame>{haiku.body}</BgFrame>
+            </div>
+          );
+        })
       }
     </div>
   </body>
