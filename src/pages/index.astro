@@ -1,33 +1,28 @@
 ---
-import BgAtomic from "@backgrounds/mock-bg-atomic-tangerine/index.astro";
-import BgDelft from "@backgrounds/mock-bg-delft-blue/index.astro";
 import "../styles/global.css";
 
-const bgs = [BgAtomic, BgDelft];
-
+import HtmlLayout from "@layouts/basic-layout.astro";
+import HaikusLayout from "@layouts/haikus-layout.astro";
+import HaikuSection from "@haiku/haiku-section.astro";
+import BgAtomic from "@backgrounds/mock-bg-atomic-tangerine/index.astro";
+import BgDelft from "@backgrounds/mock-bg-delft-blue/index.astro";
 import { getCollection } from "astro:content";
+
+const backgrounds = [BgAtomic, BgDelft];
 const haikus = await getCollection("haikus");
 ---
 
-<!doctype html>
-<html lang="es">
-  <head>
-    <title>haikus-etec</title>
-  </head>
-  <body>
-    <div
-      class="bg-burnt_sienna h-screen snap-mandatory snap-y overflow-y-scroll"
-    >
-      {
-        haikus.map((haiku, index) => {
-          const BgFrame = bgs[index % bgs.length];
-          return (
-            <div class="snap-start h-full snap-always">
-              <BgFrame>{haiku.body}</BgFrame>
-            </div>
-          );
-        })
-      }
-    </div>
-  </body>
-</html>
+<HtmlLayout>
+  <HaikusLayout>
+    {
+      haikus.map((haiku, index) => {
+        const Background = backgrounds[index % backgrounds.length];
+        return (
+          <HaikuSection>
+            <Background>{haiku.body}</Background>
+          </HaikuSection>
+        );
+      })
+    }
+  </HaikusLayout>
+</HtmlLayout>
