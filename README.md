@@ -1,43 +1,101 @@
-# Nipon Astro Theme
+# Haikus ETEC
 
-| ![1](./readme-assets/1.png) | ![2](./readme-assets/2.png) | ![2](./readme-assets/3.png) |
-| --------------------------- | --------------------------- | --------------------------- |
+Características:
 
-Features:
-
-- ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
 - ✅ Sitemap support
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
 - ✅ Tailwind CSS
-- ✅ Katex support
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Además la estructura básica de cualquier proyecto desarrollado con Astro🚀, se incorporan algunas carpetas propias de esta plantilla.
 
 ```
 ├── public/
 ├── src/
-│   ├── components/
+│   ├── backgrounds/
+│   ├── config/
 │   ├── content/
+│   ├── haiku/
 │   ├── layouts/
 │   └── pages/
+│   └── styles/
 ├── astro.config.mjs
+├── tailwind.config.cjs
 ├── README.md
 ├── package.json
 └── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Backgrounds
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+En la carpeta `backgrounds` se encuentran cada uno de los "fondos" que acompañan a los haikus, separados por carpetas. 
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Cada `background` debe estar envuelto en el componente `haiku-section.astro` , limitándose a sus dimensiones para no romper con el flujo normal de la interfaz. 
 
-Any static assets, like images, can be placed in the `public/` directory.
+Por otro lado, el `background` debe contener a la etiqueta `<slot/>` siendo que este será reemplazado por el haiku correspondiente.
+
+```react
+---
+import HaikuSection from "@haiku/haiku-section.astro";
+---
+
+<HaikuSection>
+  <div class="bg-atomic_tangerine h-full"><slot /></div>
+</HaikuSection>
+```
+
+
+
+## Haikus
+
+No es trivial la forma en que se agregan los haikus a la carpeta `src/content/haikus`. Al margen de los metadatos obligatorios para cada documento (expresados en el archivo `src/content/config.ts`), cada haiku suele estar compuesto por tres versos. Dejamos a continuación ejemplos de como debe finalizar cada verso, tal que su salto de línea sea respetado
+
+**Dos espacios al final de cada verso (Recomendado)**
+
+```tex
+El sol brilloso  
+camina con nosotros  
+y se apaga.
+```
+
+**Líneas entre cada verso**
+
+```
+Jazmín fragante
+
+Tu fragancia tan suave
+
+Vibra en el aire.
+```
+
+**Contra barra al final de cada verso**
+
+```
+Amor que brilla\
+En el calor nocturno\
+Tiernas caricias.
+```
+
+**Etiqueta `</br>` al final de cada verso**
+
+```
+La noche oscura. <br/>
+El cielo es muy brillante. <br/>
+Amanecer.
+```
+
+Autoras de cada uno de los haikus usados como ejemplo:
+
+- Camila Vargas Pinto
+- Antonela Ticona
+- Mía Ledesma
+- Zaira González
+
+
 
 ## 🧞 Commands
 
