@@ -95,6 +95,27 @@ Autoras de cada uno de los haikus usados como ejemplo:
 - Mía Ledesma
 - Zaira González
 
+## Tailwind Typography
+
+Para otorgar estilos a los haikus dentro de cada `background`, se pueden utilizar las clases de la librería [@tailwind/typography](https://docs.astro.build/en/recipes/tailwind-rendered-markdown/). La documentación oficial provee de suficiente información para su implementación.
+
+```react
+---
+import HaikuSection from "@haiku/haiku-section.astro";
+---
+
+<HaikuSection>
+  <div class="bg-atomic_tangerine h-full tablet:rounded-tablet">
+    <div class="flex justify-center items-center h-full">
+      <div class="prose prose-p:text-delft_blue prose-p:font-bold">
+        <slot />
+      </div>
+    </div>
+  </div>
+</HaikuSection>
+
+```
+
 
 
 ## 🧞 Commands
