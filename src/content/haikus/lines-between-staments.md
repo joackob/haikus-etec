@@ -6,8 +6,6 @@ escuela: "Escuela Técnica de la Universidad de Buenos Aires"
 curso: "1D"
 ---
 
-Jazmín fragante
-
-Tu fragancia tan suave
-
+Jazmín fragante\
+Tu fragancia tan suave\
 Vibra en el aire.

@@ -23,6 +23,12 @@ module.exports = {
         delft_blue: "#41436aff",
         jet: "#3e3638ff",
       },
+      screens: {
+        tablet: "28rem",
+      },
+      borderRadius: {
+        tablet: "32px",
+      },
     },
   },
   plugins: [],

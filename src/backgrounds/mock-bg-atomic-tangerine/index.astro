@@ -3,5 +3,9 @@ import HaikuSection from "@haiku/haiku-section.astro";
 ---
 
 <HaikuSection>
-  <div class="bg-atomic_tangerine h-full"><slot /></div>
+  <div class="bg-atomic_tangerine h-full tablet:rounded-tablet">
+    <div class="flex justify-center items-center h-full">
+      <slot />
+    </div>
+  </div>
 </HaikuSection>
