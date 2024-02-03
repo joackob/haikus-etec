@@ -3,9 +3,13 @@ import HaikuSection from "@haiku/haiku-section.astro";
 ---
 
 <HaikuSection>
-  <div class="bg-atomic_tangerine h-full tablet:rounded-tablet">
-    <div class="flex justify-center items-center h-full">
-      <div class="prose prose-p:text-delft_blue prose-p:font-bold">
+  <script src="./engine.ts"></script>
+  <div class="relative bg-delft_blue h-full tablet:rounded-tablet">
+    <div class="absolute canvas-bg-atomic bg-transparent"></div>
+    <div class="flex justify-start items-start h-full">
+      <div
+        class="relative z-10 prose prose-p:text-atomic_tangerine m-4 prose-p:font-bold"
+      >
         <slot />
       </div>
     </div>

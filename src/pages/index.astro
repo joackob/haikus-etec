@@ -10,7 +10,7 @@ import { getCollection } from "astro:content";
 const backgrounds = [BgAtomic, BgDelft];
 const haikus = await getCollection("haikus");
 const haikusRenders = await Promise.all(
-  haikus.map(async (haiku) => await haiku.render()),
+  haikus.map(async (haiku) => await haiku.render())
 );
 ---
 
