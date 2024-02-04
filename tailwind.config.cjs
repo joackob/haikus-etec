@@ -29,6 +29,9 @@ module.exports = {
       borderRadius: {
         tablet: "32px",
       },
+      maxHeight: {
+        180: "45rem",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
