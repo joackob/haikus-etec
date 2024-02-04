@@ -56,22 +56,23 @@ canvas.forEach((canva) => {
     fillColor: "transparent",
     isStatic: true,
   });
+  const delta = 500;
   const bar = rectangle({
     x: widthContainer / 2,
-    y: 0,
+    y: 0 - delta,
     width: widthContainer * 0.95,
     height: heightContainer * 0.1,
     fillColor: quinacridoneMagentaColor,
   });
   const disco = circle({
     x: widthContainer / 4,
-    y: heightContainer / 2,
+    y: heightContainer / 2 - delta,
     radio: widthContainer / 4,
     fillColor: brightPinkCrayolaColor,
   });
   const column = rectangle({
     x: widthContainer * 0.75,
-    y: heightContainer / 2,
+    y: heightContainer / 2 - delta,
     width: widthContainer / 2,
     height: heightContainer - heightContainer / 4,
     fillColor: atomicTangerineColor,
