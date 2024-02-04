@@ -1,11 +1,14 @@
 <section class="h-full snap-start snap-always">
   <div class="h-full tablet:max-w-xs tablet:m-auto">
-    <div class="h-full flex flex-col justify-center">
+    <div class="h-full flex flex-col">
+      <div class="grow"></div>
       <div
         class="tablet:max-h-180 tablet:rounded-tablet tablet:shadow-2xl h-full"
       >
         <slot />
       </div>
+
+      <div class="grow-[2]"></div>
     </div>
   </div>
 </section>
