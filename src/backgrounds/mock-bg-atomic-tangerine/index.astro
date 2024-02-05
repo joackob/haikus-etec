@@ -3,9 +3,8 @@ import HaikuSection from "@haiku/haiku-section.astro";
 ---
 
 <HaikuSection>
-  <script src="./engine.ts"></script>
   <div class="relative bg-delft_blue h-full tablet:rounded-tablet">
-    <div class="absolute canvas-bg-atomic bg-transparent"></div>
+    <div class="absolute bg-transparent" canva-bg-atomic></div>
     <div class="flex justify-start items-start h-full">
       <div
         class="relative z-10 prose prose-p:text-atomic_tangerine m-4 prose-p:font-bold"
@@ -14,4 +13,45 @@ import HaikuSection from "@haiku/haiku-section.astro";
       </div>
     </div>
   </div>
+  <script>
+    import Matter from "matter-js";
+    import { createBodies } from "./bodies";
+
+    const containers = document.querySelectorAll(`[canva-bg-atomic]`);
+    containers.forEach((container) => {
+      const parent = container.parentElement;
+      const size = parent?.getBoundingClientRect()!;
+      const canvas = document.createElement("canvas");
+      container.appendChild(canvas);
+      const engine = Matter.Engine.create();
+      const render = Matter.Render.create({
+        canvas,
+        engine,
+        options: {
+          width: size.width,
+          height: size.height,
+          background: "transparent",
+          wireframes: false,
+        },
+      });
+
+      const bodies = createBodies(size);
+      const mouse = Matter.Mouse.create(render.canvas);
+      const mouseConstraint = Matter.MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+          stiffness: 0.2,
+          render: {
+            visible: false,
+          },
+        },
+      });
+
+      Matter.Composite.add(engine.world, mouseConstraint);
+      Matter.World.add(engine.world, bodies);
+      Matter.Render.run(render);
+      const runner = Matter.Runner.create();
+      Matter.Runner.run(runner, engine);
+    });
+  </script>
 </HaikuSection>
