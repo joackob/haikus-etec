@@ -2,6 +2,7 @@ import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../config/consts";
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function GET(context) {
 	const haikus = await getCollection("haikus");
 	const rssResponse = rss({

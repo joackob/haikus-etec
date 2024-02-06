@@ -3,45 +3,44 @@ import HaikuSection from "@haiku/haiku-section.astro";
 ---
 
 <HaikuSection>
-  <div class="relative bg-delft_blue h-full rounded-tablet">
-    <div class="absolute" canvas-delft-blue></div>
-    <div class="flex flex-col items-center h-full">
-      <div class="grow"></div>
-      <div
-        class="relative z-10 prose prose-p:text-atomic_tangerine prose-p:font-bold"
-      >
-        <slot />
-      </div>
-      <div class="grow-[2]"></div>
-    </div>
-  </div>
-  <script>
-    import Matter from "matter-js";
-    import { createBodies } from "./bodies";
+	<div class="relative bg-delft_blue h-full rounded-tablet">
+		<div class="absolute" canvas-delft-blue></div>
+		<div class="flex flex-col items-center h-full">
+			<div class="grow"></div>
+			<div class="relative z-10 prose prose-p:text-atomic_tangerine prose-p:font-bold">
+				<slot />
+			</div>
+			<div class="grow-[2]"></div>
+		</div>
+	</div>
+	<script>
+		import Matter from "matter-js";
+		import { createBodies } from "./bodies";
 
-    const containers = document.querySelectorAll(`[canvas-delft-blue]`);
-    containers.forEach((container) => {
-      const parent = container.parentElement;
-      const size = parent?.getBoundingClientRect()!;
-      const canvas = document.createElement("canvas");
-      container.appendChild(canvas);
-      const engine = Matter.Engine.create();
-      const render = Matter.Render.create({
-        canvas,
-        engine,
-        options: {
-          width: size.width,
-          height: size.height,
-          background: "transparent",
-          wireframes: false,
-        },
-      });
+		const containers = document.querySelectorAll(`[canvas-delft-blue]`);
+		containers.forEach((container) => {
+			const parent = container.parentElement;
+			if (!parent) return;
+			const size = parent.getBoundingClientRect();
+			const canvas = document.createElement("canvas");
+			container.appendChild(canvas);
+			const engine = Matter.Engine.create();
+			const render = Matter.Render.create({
+				canvas,
+				engine,
+				options: {
+					width: size.width,
+					height: size.height,
+					background: "transparent",
+					wireframes: false,
+				},
+			});
 
-      const bodies = createBodies(size);
-      Matter.World.add(engine.world, bodies);
-      Matter.Render.run(render);
-      const runner = Matter.Runner.create();
-      Matter.Runner.run(runner, engine);
-    });
-  </script>
+			const bodies = createBodies(size);
+			Matter.World.add(engine.world, bodies);
+			Matter.Render.run(render);
+			const runner = Matter.Runner.create();
+			Matter.Runner.run(runner, engine);
+		});
+	</script>
 </HaikuSection>

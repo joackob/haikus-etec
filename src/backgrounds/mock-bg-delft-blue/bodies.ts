@@ -7,7 +7,7 @@ interface IOrigami {
 }
 
 const DIM_ORIGAMI_PNG = 256;
-const createOrigami = ({ x, y, size }: IOrigami) => {
+const createOrigami = ({ x, y, size }: IOrigami): Matter.Body => {
 	return Bodies.circle(x, y, size / 2, {
 		render: {
 			sprite: {
@@ -28,7 +28,14 @@ interface IRectangle {
 	isStatic?: boolean;
 }
 
-export const rectangle = ({ x, y, width, height, fillColor, isStatic = false }: IRectangle) =>
+export const rectangle = ({
+	x,
+	y,
+	width,
+	height,
+	fillColor,
+	isStatic = false,
+}: IRectangle): Matter.Body =>
 	Bodies.rectangle(x, y, width, height, {
 		isStatic,
 		render: { fillStyle: fillColor },
@@ -39,7 +46,7 @@ interface PropsCreateBodies {
 	height: number;
 }
 
-export const createBodies = (props: PropsCreateBodies) => {
+export const createBodies = (props: PropsCreateBodies): Matter.Body[] => {
 	const wight = 10;
 	const floor = rectangle({
 		x: props.width / 2,
