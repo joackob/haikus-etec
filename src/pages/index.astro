@@ -7,7 +7,7 @@ import BgAtomic from "@backgrounds/mock-bg-atomic-tangerine/index.astro";
 import BgDelft from "@backgrounds/mock-bg-delft-blue/index.astro";
 import { getCollection } from "astro:content";
 
-const backgrounds = [BgAtomic, BgDelft];
+const backgrounds = [BgDelft, BgAtomic];
 const haikus = await getCollection("haikus");
 const haikusRenders = await Promise.all(
   haikus.map(async (haiku) => await haiku.render())
