@@ -12,27 +12,27 @@
 // --jet: #3e3638ff;
 //
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  theme: {
-    extend: {
-      colors: {
-        atomic_tangerine: "#fd9678ff",
-        burnt_sienna: "#d97c65ff",
-        bright_pink_crayola: "#f54768ff",
-        quinacridone_magenta: "#974063ff",
-        delft_blue: "#41436aff",
-        jet: "#3e3638ff",
-      },
-      screens: {
-        tablet: "28rem",
-      },
-      borderRadius: {
-        tablet: "32px",
-      },
-      maxHeight: {
-        180: "45rem",
-      },
-    },
-  },
-  plugins: [require("@tailwindcss/typography")],
+	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+	theme: {
+		extend: {
+			colors: {
+				atomic_tangerine: "#fd9678ff",
+				burnt_sienna: "#d97c65ff",
+				bright_pink_crayola: "#f54768ff",
+				quinacridone_magenta: "#974063ff",
+				delft_blue: "#41436aff",
+				jet: "#3e3638ff",
+			},
+			screens: {
+				tablet: "28rem",
+			},
+			borderRadius: {
+				tablet: "32px",
+			},
+			maxHeight: {
+				180: "45rem",
+			},
+		},
+	},
+	plugins: [require("@tailwindcss/typography")],
 };

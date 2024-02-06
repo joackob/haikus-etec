@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://joackob.github.io",
-  base: "/haikus-etec",
-  integrations: [mdx(), sitemap(), tailwind()],
+	site: "https://joackob.github.io",
+	base: "/haikus-etec",
+	integrations: [mdx(), sitemap(), tailwind()],
 });
