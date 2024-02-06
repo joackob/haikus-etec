@@ -7,7 +7,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@content/*": ["src/content/*"],
       "@backgrounds/*": ["src/backgrounds/*"],
-      "@haiku/*": ["src/haiku/*"]
-    }
-  }
+      "@haiku/*": ["src/haiku/*"],
+    },
+  },
 }

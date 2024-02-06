@@ -32,9 +32,9 @@ Además la estructura básica de cualquier proyecto desarrollado con Astro🚀, 
 
 ## Backgrounds
 
-En la carpeta `backgrounds` se encuentran cada uno de los "fondos" que acompañan a los haikus, separados por carpetas. 
+En la carpeta `backgrounds` se encuentran cada uno de los "fondos" que acompañan a los haikus, separados por carpetas.
 
-Cada `background` debe estar envuelto en el componente `haiku-section.astro` , limitándose a sus dimensiones para no romper con el flujo normal de la interfaz. 
+Cada `background` debe estar envuelto en el componente `haiku-section.astro` , limitándose a sus dimensiones para no romper con el flujo normal de la interfaz.
 
 Por otro lado, el `background` debe contener a la etiqueta `<slot/>` siendo que este será reemplazado por el haiku correspondiente.
 
@@ -48,8 +48,6 @@ import HaikuSection from "@haiku/haiku-section.astro";
 </HaikuSection>
 ```
 
-
-
 ## Haikus
 
 No es trivial la forma en que se agregan los haikus a la carpeta `src/content/haikus`. Al margen de los metadatos obligatorios para cada documento (expresados en el archivo `src/content/config.ts`), cada haiku suele estar compuesto por tres versos. Dejamos a continuación ejemplos de como debe finalizar cada verso, tal que su salto de línea sea respetado
@@ -57,32 +55,22 @@ No es trivial la forma en que se agregan los haikus a la carpeta `src/content/ha
 **Dos espacios al final de cada verso (Recomendado)**
 
 ```tex
-El sol brilloso  
-camina con nosotros  
+El sol brilloso
+camina con nosotros
 y se apaga.
-```
-
-**Líneas entre cada verso**
-
-```
-Jazmín fragante
-
-Tu fragancia tan suave
-
-Vibra en el aire.
 ```
 
 **Contra barra al final de cada verso**
 
-```
+```tex
 Amor que brilla\
 En el calor nocturno\
 Tiernas caricias.
 ```
 
-**Etiqueta `</br>` al final de cada verso**
+**Etiqueta `</br>` al final de cada verso (Para nada recom**
 
-```
+```tex
 La noche oscura. <br/>
 El cielo es muy brillante. <br/>
 Amanecer.
@@ -115,8 +103,6 @@ import HaikuSection from "@haiku/haiku-section.astro";
 </HaikuSection>
 
 ```
-
-
 
 ## 🧞 Commands
 
