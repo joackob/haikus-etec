@@ -1,4 +1,4 @@
-import { Bodies, Body } from "matter-js";
+import { Bodies, Common } from "matter-js";
 
 interface IOrigami {
   x: number;
@@ -72,11 +72,17 @@ export const createBodies = (props: PropsCreateBodies) => {
     fillColor: "transparent",
     isStatic: true,
   });
-  const delta = 0;
-  const origami = createOrigami({
-    x: props.width / 2,
-    y: -delta,
-    size: props.width * 0.2,
-  });
-  return [rightWall, leftWall, floor, origami];
+  const delta = -500;
+  const cantidadDeOrigamis = 30;
+  const origamis = [];
+  for (let i = 0; i < cantidadDeOrigamis; i++) {
+    origamis.push(
+      createOrigami({
+        x: Common.random(0, props.width),
+        y: Common.random(delta, 0),
+        size: props.width * 0.2,
+      }),
+    );
+  }
+  return [rightWall, leftWall, floor, ...origamis];
 };
