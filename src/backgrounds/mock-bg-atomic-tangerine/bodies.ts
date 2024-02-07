@@ -1,38 +1,10 @@
-import { Bodies } from "matter-js";
+import { circle, rectangle } from "@utils/matterjs/bodies";
 
-import { quinacridoneMagentaColor, brightPinkCrayolaColor, atomicTangerineColor } from "./colors";
-
-interface ICircle {
-	x: number;
-	y: number;
-	radio: number;
-	fillColor: string;
-}
-
-export const circle = ({ x, y, radio, fillColor }: ICircle): Matter.Body =>
-	Bodies.circle(x, y, radio, { render: { fillStyle: fillColor } });
-
-interface IRectangle {
-	x: number;
-	y: number;
-	width: number;
-	height: number;
-	fillColor: string;
-	isStatic?: boolean;
-}
-
-export const rectangle = ({
-	x,
-	y,
-	width,
-	height,
-	fillColor,
-	isStatic = false,
-}: IRectangle): Matter.Body =>
-	Bodies.rectangle(x, y, width, height, {
-		isStatic,
-		render: { fillStyle: fillColor },
-	});
+import {
+	quinacridoneMagentaColor,
+	brightPinkCrayolaColor,
+	atomicTangerineColor,
+} from "@utils/matterjs/colors";
 
 interface PropsCreateBodies {
 	width: number;

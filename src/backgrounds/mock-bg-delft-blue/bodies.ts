@@ -1,4 +1,5 @@
 import { Bodies, Common } from "matter-js";
+import { rectangle } from "@utils/matterjs/bodies";
 
 interface IOrigami {
 	x: number;
@@ -18,28 +19,6 @@ const createOrigami = ({ x, y, size }: IOrigami): Matter.Body => {
 		},
 	});
 };
-
-interface IRectangle {
-	x: number;
-	y: number;
-	width: number;
-	height: number;
-	fillColor: string;
-	isStatic?: boolean;
-}
-
-export const rectangle = ({
-	x,
-	y,
-	width,
-	height,
-	fillColor,
-	isStatic = false,
-}: IRectangle): Matter.Body =>
-	Bodies.rectangle(x, y, width, height, {
-		isStatic,
-		render: { fillStyle: fillColor },
-	});
 
 interface PropsCreateBodies {
 	width: number;

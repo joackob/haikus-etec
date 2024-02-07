@@ -4,7 +4,7 @@ import HaikuSection from "@haiku/haiku-section.astro";
 
 <HaikuSection>
 	<div class="relative bg-delft_blue h-full rounded-tablet">
-		<div class="absolute" canvas-delft-blue></div>
+		<div class="absolute h-full w-full" canvas-delft-blue></div>
 		<div class="flex flex-col items-center h-full">
 			<div class="grow"></div>
 			<div class="relative z-10 prose prose-p:text-atomic_tangerine prose-p:font-bold">
@@ -16,27 +16,24 @@ import HaikuSection from "@haiku/haiku-section.astro";
 	<script>
 		import Matter from "matter-js";
 		import { createBodies } from "./bodies";
+		import { createCanvas } from "@utils/matterjs/canvas";
 
 		const containers = document.querySelectorAll(`[canvas-delft-blue]`);
 		containers.forEach((container) => {
-			const parent = container.parentElement;
-			if (!parent) return;
-			const size = parent.getBoundingClientRect();
-			const canvas = document.createElement("canvas");
-			container.appendChild(canvas);
+			const canvas = createCanvas({ container });
 			const engine = Matter.Engine.create();
 			const render = Matter.Render.create({
 				canvas,
 				engine,
 				options: {
-					width: size.width,
-					height: size.height,
+					width: canvas.width,
+					height: canvas.height,
 					background: "transparent",
 					wireframes: false,
 				},
 			});
 
-			const bodies = createBodies(size);
+			const bodies = createBodies(canvas);
 			Matter.World.add(engine.world, bodies);
 			Matter.Render.run(render);
 			const runner = Matter.Runner.create();
