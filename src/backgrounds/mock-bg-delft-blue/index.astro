@@ -14,30 +14,20 @@ import HaikuSection from "@haiku/haiku-section.astro";
 		</div>
 	</div>
 	<script>
-		import Matter from "matter-js";
+		import { Engine } from "@utils/matterjs/engine";
 		import { createBodies } from "./bodies";
 		import { createCanvas } from "@utils/matterjs/canvas";
 
 		const containers = document.querySelectorAll(`[canvas-delft-blue]`);
 		containers.forEach((container) => {
 			const canvas = createCanvas({ container });
-			const engine = Matter.Engine.create();
-			const render = Matter.Render.create({
+			const bodies = createBodies(canvas);
+			const engine = new Engine({
 				canvas,
-				engine,
-				options: {
-					width: canvas.width,
-					height: canvas.height,
-					background: "transparent",
-					wireframes: false,
-				},
+				bodies,
 			});
 
-			const bodies = createBodies(canvas);
-			Matter.World.add(engine.world, bodies);
-			Matter.Render.run(render);
-			const runner = Matter.Runner.create();
-			Matter.Runner.run(runner, engine);
+			engine.run();
 		});
 	</script>
 </HaikuSection>
