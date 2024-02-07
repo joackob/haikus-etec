@@ -4,7 +4,7 @@ import HaikuSection from "@haiku/haiku-section.astro";
 
 <HaikuSection>
 	<div class="relative bg-delft_blue h-full rounded-tablet">
-		<div class="absolute h-full w-full" canva-bg-atomic></div>
+		<div class="absolute h-full w-full" container-bg-j></div>
 		<div class="flex justify-start items-start h-full">
 			<div class="relative z-10 prose prose-p:text-atomic_tangerine m-4 prose-p:font-bold">
 				<slot />
@@ -16,7 +16,7 @@ import HaikuSection from "@haiku/haiku-section.astro";
 		import { createCanvas } from "@utils/matterjs/canvas";
 		import { Engine } from "@utils/matterjs/engine";
 
-		const containers = document.querySelectorAll(`[canva-bg-atomic]`);
+		const containers = document.querySelectorAll(`[container-bg-j]`);
 		containers.forEach((container) => {
 			const canvas = createCanvas({ container });
 			const bodies = createBodies(canvas);

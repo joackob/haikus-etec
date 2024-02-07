@@ -1,5 +1,6 @@
 import { Bodies, Common } from "matter-js";
 import { rectangle } from "@utils/matterjs/bodies";
+import type { ICanvasBounds } from "@utils/matterjs/canvas";
 
 interface IOrigami {
 	x: number;
@@ -20,34 +21,29 @@ const createOrigami = ({ x, y, size }: IOrigami): Matter.Body => {
 	});
 };
 
-interface PropsCreateBodies {
-	width: number;
-	height: number;
-}
-
-export const createBodies = (props: PropsCreateBodies): Matter.Body[] => {
+export const createBodies = (bounds: ICanvasBounds): Matter.Body[] => {
 	const wight = 10;
 	const floor = rectangle({
-		x: props.width / 2,
-		y: props.height,
-		width: props.width,
+		x: bounds.width / 2,
+		y: bounds.height,
+		width: bounds.width,
 		height: wight,
 		fillColor: "transparent",
 		isStatic: true,
 	});
 	const leftWall = rectangle({
 		x: 0,
-		y: props.height / 2,
+		y: bounds.height / 2,
 		width: wight,
-		height: props.height,
+		height: bounds.height,
 		fillColor: "transparent",
 		isStatic: true,
 	});
 	const rightWall = rectangle({
-		x: props.width,
-		y: props.height / 2,
+		x: bounds.width,
+		y: bounds.height / 2,
 		width: wight,
-		height: props.height,
+		height: bounds.height,
 		fillColor: "transparent",
 		isStatic: true,
 	});
@@ -57,9 +53,9 @@ export const createBodies = (props: PropsCreateBodies): Matter.Body[] => {
 	for (let i = 0; i < cantidadDeOrigamis; i++) {
 		origamis.push(
 			createOrigami({
-				x: Common.random(0, props.width),
+				x: Common.random(0, bounds.width),
 				y: Common.random(delta, 0),
-				size: props.width * 0.2,
+				size: bounds.width * 0.2,
 			}),
 		);
 	}

@@ -1,3 +1,8 @@
+export interface ICanvasBounds {
+	width: number;
+	height: number;
+}
+
 interface IProps {
 	container: Element;
 }
