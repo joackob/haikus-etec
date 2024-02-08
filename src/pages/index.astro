@@ -5,9 +5,10 @@ import HtmlLayout from "@layouts/basic-layout.astro";
 import HaikusLayout from "@layouts/haikus-layout.astro";
 import BgAtomic from "@backgrounds/mock-bg-atomic-tangerine/index.astro";
 import BgDelft from "@backgrounds/mock-bg-delft-blue/index.astro";
+import BgMontana from "@backgrounds/fondo-montaña/index.astro";
 import { getCollection } from "astro:content";
 
-const backgrounds = [BgDelft, BgAtomic];
+const backgrounds = [BgDelft, BgAtomic,BgMontana];
 const haikus = await getCollection("haikus");
 const haikusRenders = await Promise.all(
   haikus.map(async (haiku) => await haiku.render())

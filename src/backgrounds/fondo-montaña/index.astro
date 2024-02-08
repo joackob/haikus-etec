@@ -1,15 +1,26 @@
 ---
-import HaikuSection from "../../haiku/haiku-section.astro";
+import HaikuSection from "@haiku/haiku-section.astro";
 import Montana from "./icons/montana.astro";
+import Rama from "./icons/rama.astro";
 ---
 
 <HaikuSection>
-  <div class="bg-delft_blue h-full tablet:rounded-tablet">
-    <div class="flex justify-center items-center h-full">
-      <div class="prose prose-p:text-atomic_tangerine">
+  <div class="bg-atomic_tangerine h-full tablet:rounded-tablet overflow-hidden">
+    <div class="relative h-full">
+      <div class="prose prose-p:text-delft_blue h-full absolute m-3">
         <slot />
       </div>
-      <Montana/>
+      <div class="h-full absolute right-0">
+        <div class="max-h-40 max-w-40">
+          <Rama/>
+        </div>
+      </div>
+      <div class="h-full w-full flex justify-center items-center absolute">
+        <div class="h-60 w-60 rounded-full bg-bright_pink_crayola"></div>
+        <div class="absolute -bottom-5 max-h-180">
+          <Montana/>
+        </div>
+      </div>
     </div>
   </div>
 </HaikuSection>

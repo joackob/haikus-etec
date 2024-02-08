@@ -1,15 +1,13 @@
 ---
-import HaikusLayout from "../../layouts/haikus-layout.astro";
+import HaikusLayout from "@haiku/haiku-section.astro";
 import Luna from "./icons/Luna.astro";
 import Montana from "./icons/montana.astro";
-import Haiku from "../../haiku/haiku.astro";
 ---
 
 <HaikusLayout>
-  <Haiku />
   <div class="flex items-center h-screen">
     <div class="mx-auto">
-      <div class="">
+      <div>
         <Luna />
       </div>
       <slot />
